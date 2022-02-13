@@ -374,7 +374,9 @@ export const renderImageOnDiv = function (pageWidth, pageHeight, imgSrc, boundar
     img.setAttribute('height', `${imgH}px`);
     if (ctm) {
         const ctms = parseCtm(ctm);
-        img.setAttribute('transform', `matrix(${ctms[0]/imgW/0.2642} ${ctms[1]/imgW/0.2642} ${ctms[2]/imgH/0.2642} ${ctms[3]/imgH/0.2642} ${converterDpi(ctms[4])} ${converterDpi(ctms[5])})`)
+        console.log('ctms >>> ', imgW, w)
+        // img.setAttribute('transform', `matrix(${ctms[0]/imgW/0.2642} ${ctms[1]/imgW/0.2642} ${ctms[2]/imgH/0.2642} ${ctms[3]/imgH/0.2642} ${converterDpi(ctms[4])} ${converterDpi(ctms[5])})`)
+        img.setAttribute('transform', `matrix(${w/imgW} ${ctms[1]/imgW/0.2642} ${ctms[2]/imgH/0.2642} ${h/imgH} ${converterDpi(ctms[4])} ${converterDpi(ctms[5])})`)
     }
     if (compositeObjectBoundary) {
         img.setAttribute('width', '100%');
