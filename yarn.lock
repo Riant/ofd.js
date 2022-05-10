@@ -988,10 +988,10 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
-"@lapo/asn1js@^1.2.3":
+"@lapo/asn1js@^1.2.1":
   version "1.2.3"
-  resolved "https://registry.npmmirror.com/@lapo/asn1js/download/@lapo/asn1js-1.2.3.tgz#a5b15a769cb31d550ccf9eed3725ffd83f47026b"
-  integrity sha1-pbFadpyzHVUMz57tNyX/2D9HAms=
+  resolved "https://registry.yarnpkg.com/@lapo/asn1js/-/asn1js-1.2.3.tgz#a5b15a769cb31d550ccf9eed3725ffd83f47026b"
+  integrity sha512-6dWV0syRWrnZAcbygq/LRd9alZ5NIJVFTU4nmlbwJSigGh2O49nFFURcDP1KeKoxsXmxGfAPGj4soX1mrV2uAQ==
 
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
@@ -5209,20 +5209,25 @@ jsrsasign-util@^1.0.0:
     jsonc-parser ">= 0.0.1"
     jsrsasign ">= 4.8.2"
 
-"jsrsasign@>= 4.8.2", jsrsasign@^10.5.1:
+"jsrsasign@>= 4.8.2":
   version "10.5.1"
   resolved "https://registry.npmmirror.com/jsrsasign/download/jsrsasign-10.5.1.tgz#85dc7c6c3f6a5fded26030971c08ce5058f525f6"
   integrity sha512-yW0fq87KNZFw4Pn5ySllXs3ztZAROQZczEheKZTqmiNpCe/Xj9r5NhuAQ7MXTOyEZGJ/+MPHGTsfbgPFaLpwHQ==
+
+jsrsasign@^9.1.9:
+  version "9.1.9"
+  resolved "https://registry.yarnpkg.com/jsrsasign/-/jsrsasign-9.1.9.tgz#62f44eb2766264f0bfaffd87b8ade05ee4563347"
+  integrity sha512-BMajAcUANeo07/MnscMAsHJtddYtqN/ix4twr+dOheHc5KH/Ad06bI6YfUB2M7ZQhqxvt9pbVWFXYQXe6G+yXw==
 
 jszip-utils@^0.1.0:
   version "0.1.0"
   resolved "https://registry.npm.taobao.org/jszip-utils/download/jszip-utils-0.1.0.tgz#8c04cdedcdb291e83f055f5b261b3a3188ceca0b"
   integrity sha1-jATN7c2ykeg/BV9bJhs6MYjOygs=
 
-jszip@^3.7.1:
-  version "3.7.1"
-  resolved "https://registry.npmmirror.com/jszip/download/jszip-3.7.1.tgz#bd63401221c15625a1228c556ca8a68da6fda3d9"
-  integrity sha512-ghL0tz1XG9ZEmRMcEN2vt7xabrDdqHHeykgARpmZ0BiIctWxM47Vt63ZO2dnp4QYt/xJVLLy5Zv1l/xRdh2byg==
+jszip@^3.5.0:
+  version "3.9.1"
+  resolved "https://registry.yarnpkg.com/jszip/-/jszip-3.9.1.tgz#784e87f328450d1e8151003a9c67733e2b901051"
+  integrity sha512-H9A60xPqJ1CuC4Ka6qxzXZeU8aNmgOeP5IFqwJbQQwtu2EUYxota3LdsiZWplF7Wgd9tkAd0mdu36nceSaPuYw==
   dependencies:
     lie "~3.3.0"
     pako "~1.0.2"
@@ -7429,10 +7434,10 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-sm-crypto@^0.3.7:
-  version "0.3.7"
-  resolved "https://registry.npmmirror.com/sm-crypto/download/sm-crypto-0.3.7.tgz#d48ad948772eeed0c677c82f490f56925ffe7c0a"
-  integrity sha512-t9SVgGpFkqaQtA8P81+b+gNBDZUyGhSq46ojA8YWf1mKYk8qcRqeCPte+WxLSMaGT38CJLoj43ljfpKX3LZVfA==
+sm-crypto@^0.2.1:
+  version "0.2.7"
+  resolved "https://registry.yarnpkg.com/sm-crypto/-/sm-crypto-0.2.7.tgz#89a05d33748059c303aeabe58e1fd1d34840048c"
+  integrity sha512-ud99GXEXlNgQk/Q7J2C/iaJRbmrbnJmz8ymfMUVH48XVVcMO2WjYRFtxh9g3rLHgRGbHUR/lBZzLME6M8upTSQ==
   dependencies:
     jsbn "^1.1.0"
 

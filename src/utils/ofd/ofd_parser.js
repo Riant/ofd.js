@@ -61,6 +61,14 @@ export const parseSingleDoc = async function ([zip, array]) {
     return docs;
 }
 
+// const hexToBase64 = function(hexStr) {
+//  let base64 = "";
+//  for(let i = 0; i < hexStr.length; i++) {
+//    base64 += !(i - 1 & 1) ? String.fromCharCode(parseInt(hexStr.substring(i - 1, i + 1), 16)) : ""
+//  }
+//  return btoa(base64);
+// }
+
 export const doGetDocRoot = async function (zip, docbody) {
     let docRoot = docbody['ofd:DocRoot'];
     docRoot = replaceFirstSlash(docRoot);
@@ -82,7 +90,22 @@ export const doGetDocRoot = async function (zip, docbody) {
                     stampAnnotArray[stamp.stampAnnot['@_PageRef']].push({type: 'ofd', obj: stampObj, stamp});
                 }
             } else if (stamp.sealObj.type === 'png' || stamp.sealObj.type === 'gif' || stamp.sealObj.type === 'jpg' || stamp.sealObj.type === 'jpeg' || stamp.sealObj.type === 'bmp') {
-                let img = 'data:image/png;base64,' + btoa(String.fromCharCode.apply(null, stamp.sealObj.ofdArray));
+                let img = ''
+                if (stamp.sealObj.ofdArray.length > 100000) { // 尝试解决数据量太大时，浏览器误认为死循环而中断报错的问题
+                    console.log('图片太大，分片处理')
+                    const perLen = 100000
+                    const len = stamp.sealObj.ofdArray.length
+                    const parts = Math.ceil(len / perLen)
+                    let binary = ''
+                    for (let i = 0; i < parts; i++) {
+                        const to = (i + 1 < parts ? (i + 1) * perLen : len) - 1
+                        binary += String.fromCharCode(...stamp.sealObj.ofdArray.slice(i * perLen, to))
+                    }
+                    img = btoa(binary)
+                } else {
+                    img = btoa(String.fromCharCode.apply(null, stamp.sealObj.ofdArray));
+                }
+                img = 'data:image/png;base64,' + img
                 let stampArray = [];
                 stampArray = stampArray.concat(stamp.stampAnnot);
                 for (const annot of stampArray) {

@@ -62,6 +62,7 @@ const decode = function (der, offset) {
         const SES_Signature = decodeSES_Signature(der,offset);
         const type = SES_Signature.toSign.eseal.esealInfo.picture.type;
         const ofdArray = SES_Signature.toSign.eseal.esealInfo.picture.data.byte;
+        // const hexStr = SES_Signature.toSign.eseal.esealInfo.picture.data.hex.str;
         return {ofdArray, 'type': type.toLowerCase(), SES_Signature,'verifyRet':SES_Signature_Verify(SES_Signature)};
     } catch (e) {
         console.log(e)
