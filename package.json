@@ -1,6 +1,6 @@
 {
   "name": "kc-wpc-ofd",
-  "version": "0.2.6",
+  "version": "10.2.7",
   "main": "lib/ofd.umd.min.js",
   "author": "godlift",
   "description": "ofd渲染",
